@@ -2,20 +2,12 @@
   <head>
     <title>Prebicph's blog</title>
   <body>
-    <div>
-      <h1><a href="">Prebicph's Blog</a></h1>
-    </div>
-
-    <div>
-      <p>published : 15.07.2017, 21:05</p>
-      <h2><a href="">My first post</a></h2>
-      <p> Aenean eu leo quam............</p>
-    </div>
-
-    <div>
-      <p>published : 15.07.2017, 21:06</p>
-      <h2><a href="">My second post</a></h2>
-      <p> Aenean eu leo quam............</p>
-    </div>
+{% for post in posts %}
+<div>
+  <p>published : {{post.published_date }} </p>
+  <p><a href="">{{post.title}}</a></p>
+  <p>{{ post.text|linebreaksbr }}
+</div>
+{% endfor %}
   </body>
 </html>
